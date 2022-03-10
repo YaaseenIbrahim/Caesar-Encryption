@@ -2,17 +2,17 @@ alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n'
             'u', 'v', 'w', 'x', 'y', 'z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o',
             'p', 'q', 'r', 's', 't',
             'u', 'v', 'w', 'x', 'y', 'z']
-print("Welcome to Caeser cipher encryptor or something i forgot. anyways\n")
+print("Welcome to Caeser cipher encryptor\n")
 run = True
 while run:
-    direction = input("Type 'encode' to encrypt and 'decode' to decrypt data:\n").lower()
+    enterDirection = input("Type 'encode' to encrypt and 'decode' to decrypt data:\n").lower()
     text = input("\nEnter the message:\n").lower()
     div = True
     while div:
-        mesg_array = text.split(" ")
-        index_array = len(mesg_array) - 1
-        f_element = mesg_array[index_array]
-        step = int(f_element)
+        msgArray = text.split(" ")
+        indexOf_Array = len(msgArray) - 1
+        finalElement = msgArray[indexOf_Array]
+        step = int(finalElement)
         if step % 26 == 0:
             print("Step/key number invalid, kindly enter another key\n")
         else:
@@ -31,8 +31,8 @@ while run:
                 end_text += i
         print(f"Your {cipher_direction}d data = {end_text}")
     step = step % 26
-    if direction == "encode" or direction == "decode":
-        caeser(start_text=text, shift_amount=step, cipher_direction=direction)
+    if enterDirection == "encode" or enterDirection == "decode":
+        caeser(text, step, enterDirection)
         choice = input("\nDo you want to Continue encrypting? Type 'Y' or 'N':\n").lower()
         if choice == "n":
             run = False
