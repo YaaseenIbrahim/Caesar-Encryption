@@ -7,8 +7,8 @@ run = True
 while run:
     enterDirection = input("Type 'encode' to encrypt and 'decode' to decrypt data:\n").lower()
     text = input("\nEnter the message:\n").lower()
-    div = True
-    while div:
+    keyValid = True
+    while keyValid:
         msgArray = text.split(" ")
         indexOf_Array = len(msgArray) - 1
         finalElement = msgArray[indexOf_Array]
@@ -16,7 +16,7 @@ while run:
         if step % 26 == 0:
             print("Step/key number invalid, kindly enter another key\n")
         else:
-            div = False
+            keyValid = False
 
     def caeser(start_text, shift_amount, cipher_direction):
         end_text = ""
