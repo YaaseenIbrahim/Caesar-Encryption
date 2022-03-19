@@ -4,14 +4,15 @@ alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n'
             'u', 'v', 'w', 'x', 'y', 'z']
 
 encoded_shift = ""
-text = input("text\n")
+
+
+def step_encoder(text)
+
+
 array_text = text.split(" ")
-index_of_shift = len(array_text) - 1
-whole_shift = array_text[index_of_shift]
-shift = whole_shift
+shift = array_text[-1]
 print(shift)
 ar_shift = []
-
 for i in shift:
     ar_shift += i
 print(ar_shift)
