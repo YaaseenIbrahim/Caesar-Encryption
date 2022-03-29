@@ -12,36 +12,27 @@ while run:
     # Validation for inputting something other than encode or decode
     if enterDirection == "encode" or enterDirection == "decode":
         # The text we are inputting
-        text = input("\nEnter the message:\n").lower()
+        enterMessage = input("\nEnter the message:\n").lower()
 
         if enterDirection == "decode":
-            text_array = text.split()
+            text_array = enterMessage.split()
             step_as_letter = text_array[-1]
             if len(step_as_letter) > 9:
                 split_of_step_as_letter = step_as_letter.split()
 
         # Getting the step
-        split_text = text.split()
-        stepArray = split_text[-1]
+        text = enterMessage.split() #Makes text array with all words spillted
+        stepLetter = text.pop() #Takes oout the last word of text which should be our step
         splitStep = []
         
         #Putting only the number part of step as step
-        
-        for i in stepArray:
+        for i in stepLetter:
             if i in numbers:
                 splitStep.append(i)
-            step_noInt = "".join(splitStep)
-        step = int(step_noInt)
-
-        # Remakng the text message without step part
-        ar = []
-        text_len = len(split_text) - 1
-        for i in range(text_len):
-            ar.append(split_text[i])
-        text = " ".join(ar)
+            stepNoInt = "".join(splitStep)
+        step = int(stepNoInt)
 
         # function base:
-
         def caeser(start_text, shift_amount, cipher_direction):
             encoded_text = ""
             if cipher_direction == "decode":
@@ -63,8 +54,8 @@ while run:
         # end of function - - - - - - - - - - - - - -
         
         # step is divided so the step cannot be above 25
-        step = step % 26
-        caeser(text, step, enterDirection)
+        stepForAlphabet = step % 26
+        caeser(text, stepForAlphabet, enterDirection)
         choice = input("\nDo you want to Continue encrypting? Type 'Y' or 'N':\n").lower()
         if choice == "n":
             run = False
