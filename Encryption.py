@@ -21,9 +21,10 @@ while run:
                 split_of_step_as_letter = step_as_letter.split()
 
         # Getting the step
-        text = enterMessage.split() #Makes text array with all words spillted
-        stepLetter = text.pop() #Takes oout the last word of text which should be our step
+        arrayText = enterMessage.split() #Makes text array with all words spillted
+        stepLetter = arrayText.pop() #Takes oout the last word of text which should be our step
         splitStep = []
+        text = ' '.join(arrayText)
         
         #Putting only the number part of step as step
         for i in stepLetter:
