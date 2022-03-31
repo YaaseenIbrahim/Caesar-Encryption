@@ -1,13 +1,9 @@
-from pickle import TRUE
-
-
 alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't',
             'u', 'v', 'w', 'x', 'y', 'z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o',
             'p', 'q', 'r', 's', 't',
             'u', 'v', 'w', 'x', 'y', 'z']
 numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
 print("Welcome to Caeser cipher encryptor\n")
-
 
 # function base:
 def caeser(start_text, shift_amount, process):
@@ -39,10 +35,7 @@ def caeser(start_text, shift_amount, process):
                 decoded_message += i
         print("\nHere is your decoded message:", f"\n{decoded_message}")
 
-
 # end of function - - - - - - - - - - - - - -
-
-
 
 run = True
 while run:
