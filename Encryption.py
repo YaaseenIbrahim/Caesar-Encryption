@@ -52,6 +52,7 @@ while run:
             stepLetter = arrayText.pop() #Takes oout the last word of text which should be our step
             text = ' '.join(arrayText)
             
+           
             
             #Putting only the number part of step as step
             splitStep = []
@@ -59,11 +60,17 @@ while run:
                 if i in numbers:
                     splitStep.append(i)
                 step_string = "".join(splitStep)
-            step = int(step_string)
-            #Step is divided so the step cannot be above 25
-            stepForAlphabet = step % 26
 
-            caeser(text, stepForAlphabet, enterDirection)
+            if step_string == "":
+                print("SYNTAX ERROR, You must enter a number value for the Step")
+               
+            else:
+                step = int(step_string)
+                stepForAlphabet = step % 26
+                caeser(text, stepForAlphabet, enterDirection)
+            #Step is divided so the step cannot be above 25
+
+            
 
        #------------------------------------------------------------------------------------------
 
@@ -87,7 +94,7 @@ while run:
         if choice == "n":
                 run = False
     else:
-        print("Syntax error, You have to write encode or decode only")
+        print("SYNTAX ERROR, You have to write encode or decode only")
         choice = input("Type y to try again and n to stop:\n").lower()
         if choice == 'n':
             run = False
