@@ -55,12 +55,10 @@ while run:
     # Validation for inputting something other than encode or decode
     if enterDirection == "encode" or enterDirection == "decode":
         enterMessage = input("\nEnter the message:\n").lower()
+      
         if enterDirection == "encode":
             enterStep = input("\nEnter the step number:\n")
-
-        if enterDirection == "encode":
-
-            stepAsString = numCheck()
+            stepAsString = numCheck() #numCheck() would contain return value
 
             while stepAsString == "":
                 notStep = []
@@ -76,8 +74,6 @@ while run:
             caeser(enterMessage, stepForAlphabet, enterDirection)
             #Step is divided so the step cannot be above 25
 
-            
-
        #------------------------------------------------------------------------------------------
 
         if enterDirection == "decode":
@@ -89,8 +85,8 @@ while run:
             for i in EncodedStringStep:
                 string_stepNum += str(alphabet.index(i))
                 step = int(string_stepNum) * -1
-            step = step % 26
-            caeser(message_without_step, step, enterDirection)
+            stepForAlphabet = step % 26
+            caeser(message_without_step, stepForAlphabet, enterDirection)
         
         rep = True
         while rep:  # Validation for if its not Y or N
