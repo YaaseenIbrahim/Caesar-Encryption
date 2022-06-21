@@ -55,7 +55,8 @@ while run:
     # Validation for inputting something other than encode or decode
     if enterDirection == "encode" or enterDirection == "decode":
         enterMessage = input("\nEnter the message:\n").lower()
-        enterStep = input("\nEnter the step number:\n")
+        if enterDirection == "encode":
+            enterStep = input("\nEnter the step number:\n")
 
         if enterDirection == "encode":
 
@@ -80,9 +81,9 @@ while run:
        #------------------------------------------------------------------------------------------
 
         if enterDirection == "decode":
-            
-            EncodedStringStep = arrayText.pop()
-            message_without_step = ' '.join(arrayText)
+            enterMessage = enterMessage.split()
+            EncodedStringStep = enterMessage.pop()
+            message_without_step = ' '.join(enterMessage)
             
             string_stepNum = ""
             for i in EncodedStringStep:
