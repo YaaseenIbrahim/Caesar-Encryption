@@ -52,7 +52,7 @@ while run:
             stepLetter = arrayText.pop() #Takes oout the last word of text which should be our step
             text = ' '.join(arrayText)
             
-           
+        #    testing
             
             #Putting only the number part of step as step
             splitStep = []
