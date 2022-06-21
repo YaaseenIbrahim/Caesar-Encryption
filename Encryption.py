@@ -4,7 +4,18 @@ alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n'
             'u', 'v', 'w', 'x', 'y', 'z']
 numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
 print("Welcome to Caeser cipher encryptor\n")
-
+notStep = []
+def numCheck():
+        #Putting only the number part of step as step
+        splitStep = []
+        step_string = ''
+        for i in enterStep:
+            if i in numbers:
+                splitStep.append(i)
+            elif enterStep != ' ':
+                notStep.append(i)
+            step_string = "".join(splitStep)
+        return step_string
 # function base:
 def caeser(start_text, shift_amount, process):
     if process == "encode":
@@ -44,30 +55,24 @@ while run:
     # Validation for inputting something other than encode or decode
     if enterDirection == "encode" or enterDirection == "decode":
         enterMessage = input("\nEnter the message:\n").lower()
-        arrayText = enterMessage.split()  # Makes text array with all words spillted
+        enterStep = input("\nEnter the step number:\n")
 
         if enterDirection == "encode":
-            # Getting the step
-            
-            stepLetter = arrayText.pop() #Takes oout the last word of text which should be our step
-            text = ' '.join(arrayText)
-            
-        #    testing
-            
-            #Putting only the number part of step as step
-            splitStep = []
-            for i in stepLetter:
-                if i in numbers:
-                    splitStep.append(i)
-                step_string = "".join(splitStep)
 
-            if step_string == "":
-                print("SYNTAX ERROR, You must enter a number value for the Step")
-               
-            else:
-                step = int(step_string)
-                stepForAlphabet = step % 26
-                caeser(text, stepForAlphabet, enterDirection)
+            stepAsString = numCheck()
+
+            while stepAsString == "":
+                notStep = []
+                stepAsString = input("\nPlease enter a number:\n")
+                stepAsString = numCheck()
+           
+            if notStep != []:
+                rem_step = "".join(notStep)
+                print(f"\nFor your information these characters are not used in the step: {rem_step}")
+            
+            step = int(stepAsString)
+            stepForAlphabet = step % 26
+            caeser(enterMessage, stepForAlphabet, enterDirection)
             #Step is divided so the step cannot be above 25
 
             
