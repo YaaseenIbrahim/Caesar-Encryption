@@ -4,18 +4,34 @@ alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n'
             'u', 'v', 'w', 'x', 'y', 'z']
 numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
 print("Welcome to Caeser cipher encryptor\n")
-notStep = []
+spaceArr = [""]
 def numCheck():
+        """Checks if there is a number"""
         #Putting only the number part of step as step
+        notStep = []
         splitStep = []
         step_string = ''
         for i in enterStep:
             if i in numbers:
                 splitStep.append(i)
-            elif enterStep != ' ':
+            elif i != ' ':
                 notStep.append(i)
-            step_string = "".join(splitStep)
+        step_string = "".join(splitStep)
+        rem_step = ''
+        if notStep != []:
+            rem_step = "".join(notStep)
+            print(f"\nFor your information these characters are not used in the step: {rem_step}")
+                
         return step_string
+
+def spaceCheck():
+    """Checks if the entire string is empty"""
+    count = 0
+    messageArr = enterMessage.split(" ")
+    for i in messageArr:
+        if i in spaceArr:
+            count += 1
+    return count
 # function base:
 def caeser(start_text, shift_amount, process):
     if process == "encode":
@@ -55,19 +71,19 @@ while run:
     # Validation for inputting something other than encode or decode
     if enterDirection == "encode" or enterDirection == "decode":
         enterMessage = input("\nEnter the message:\n").lower()
-      
+
+        spaces = spaceCheck()
+        while spaces == len(enterMessage) + 1:
+            enterMessage = input("\nERROR, You left it blank! Please write something\n")    
+            spaces = spaceCheck()
+
         if enterDirection == "encode":
             enterStep = input("\nEnter the step number:\n")
             stepAsString = numCheck() #numCheck() would contain return value
 
             while stepAsString == "":
-                notStep = []
-                stepAsString = input("\nPlease enter a number:\n")
+                enterStep = input("\nPlease enter a number:\n")
                 stepAsString = numCheck()
-           
-            if notStep != []:
-                rem_step = "".join(notStep)
-                print(f"\nFor your information these characters are not used in the step: {rem_step}")
             
             step = int(stepAsString)
             stepForAlphabet = step % 26
@@ -92,6 +108,7 @@ while run:
         while rep:  # Validation for if its not Y or N
             choice = input("\nDo you want to Continue encrypting? Type 'Y' or 'N':\n").lower()
             if choice == 'n' or choice == 'y':
+                rem_step = ''
                 rep = False
         if choice == "n":
                 run = False
