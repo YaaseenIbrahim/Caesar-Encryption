@@ -13,7 +13,7 @@ def decodeNumcheck(enterStep):
             count2 += 1
     while count2 > 0:
         count2 = 0
-        enterMessage = input("\nInput the cipher text! (The last word should not contain any numbers):\n")
+        enterStep = input("\nInput the cipher text! (The last word should not contain any numbers):\n")
         enterStep = actualTextArr.pop()
         for i in enterStep:
             if i in numbers:
@@ -121,11 +121,11 @@ while run:
                     enterMessage = input("\nERROR, You left it blank! Please write something\n")
                     spaces = spaceCheck(enterMessage)
                 
-                actualTextArr = enterMessage.split()
+            actualTextArr = enterMessage.split()
             
             enterStep = actualTextArr.pop()
             # decodeNumcheck(enterStep)
-            message_without_step = ''.join(actualTextArr)
+            message_without_step = ' '.join(actualTextArr)
             
             encodedStepString = ""
             for i in enterStep:
