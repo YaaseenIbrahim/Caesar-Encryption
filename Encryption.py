@@ -39,6 +39,14 @@ def numCheck():
              
         return step_string
 
+def numCheck4decode(num):
+    """checks if the last word (step) of cipher text is all numbers"""
+    countNum = 0
+    for i in num:
+        if i in numbers:
+            countNum += 1
+    return countNum
+
 def spaceCheck(spac):
     """Checks if the entire string is empty"""
     count = 0
@@ -110,12 +118,32 @@ while run:
        #------------------------------------------------------------------------------------------
 
         if enterDirection == "decode":
-            actualTextArr = enterMessage.split()
+            actualTextArr = enterMessage.split()            
+            lastWordOfMsg = actualTextArr.pop()
+
+
+            while numCheck4decode(lastWordOfMsg) == len(lastWordOfMsg):
+                enterMessage = input("\nLast word can't be all numbers, Please Re-enter:\n")
+                actualTextArr = enterMessage.split()
+                lastWordOfMsg = actualTextArr.pop()
+                numCheck4decode(lastWordOfMsg)
+
 
             # Checking if only 1 word decode
-            while len(actualTextArr) == 1:
+            while len(enterMessage.split()) == 1:
                 enterMessage = input("\nMake sure to put the entire cipher text (You entered one word only):\n")
-        
+
+                # we need to check if the last word has only numbers again --------------------------------------
+                actualTextArr = enterMessage.split()
+                lastWordOfMsg = actualTextArr.pop()
+                numCheck4decode(lastWordOfMsg)
+                while numCheck4decode(lastWordOfMsg) == len(lastWordOfMsg):
+                    enterMessage = input("\nLast word can't be all numbers, Please Re-enter:\n")
+                    actualTextArr = enterMessage.split()
+                    lastWordOfMsg = actualTextArr.pop()
+                    numCheck4decode(lastWordOfMsg)
+                # ------------------------------------------------------------------------------------ - - - - - - - - - - - - - -
+
                 spaces = spaceCheck(enterMessage)
                 while spaces == len(enterMessage) + 1:
                     enterMessage = input("\nERROR, You left it blank! Please write something\n")
@@ -139,6 +167,7 @@ while run:
         while rep:  # Validation for if its not Y or N
             choice = input("\nDo you want to Continue encrypting? Type 'Y' or 'N':\n").lower()
             if choice == 'n' or choice == 'y':
+                encodedStepString = ""
                 rem_step = ''
                 rep = False
         if choice == "n":
