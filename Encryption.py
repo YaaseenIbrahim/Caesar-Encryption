@@ -6,19 +6,19 @@ numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
 print("Welcome to Caeser cipher encryptor\n")
 spaceArr = [""]
 
-def decodeNumcheck(encodedStringStep):
+def decodeNumcheck(enterStep):
     count2 = 0
-    for i in encodedStringStep:
+    for i in enterStep:
         if i in numbers:
             count2 += 1
     while count2 > 0:
         count2 = 0
         enterMessage = input("\nInput the cipher text! (The last word should not contain any numbers):\n")
-        encodedStringStep = actualTextArr.pop()
-        for i in encodedStringStep:
+        enterStep = actualTextArr.pop()
+        for i in enterStep:
             if i in numbers:
                 count2 += 1
-    return encodedStringStep
+    return enterStep
 
 def numCheck():
         """Checks if there is a number"""
@@ -123,15 +123,15 @@ while run:
                 
                 actualTextArr = enterMessage.split()
             
-            encodedStringStep = actualTextArr.pop()
-            decodeNumcheck(encodedStringStep)
-            message_without_step = ''.join(enterMessage)
+            enterStep = actualTextArr.pop()
+            # decodeNumcheck(enterStep)
+            message_without_step = ''.join(actualTextArr)
             
-            string_stepNum = ""
-            for i in decodeNumcheck(encodedStringStep):
+            encodedStepString = ""
+            for i in enterStep:
                 if i in alphabet:
-                    string_stepNum += str(alphabet.index(i))
-                    step = int(string_stepNum) * -1
+                    encodedStepString += str(alphabet.index(i))
+                    step = int(encodedStepString) * -1
             stepForAlphabet = step % 26
             caeser(message_without_step, stepForAlphabet, enterDirection)
         
