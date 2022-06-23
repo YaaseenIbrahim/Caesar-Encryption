@@ -45,7 +45,9 @@ def numCheck4decode(num):
     for i in num:
         if i in numbers:
             countNum += 1
-    return countNum
+        if countNum > 0:
+            return True
+    return False
 
 def spaceCheck(spac):
     """Checks if the entire string is empty"""
@@ -122,8 +124,14 @@ while run:
             lastWordOfMsg = actualTextArr.pop()
 
 
-            while numCheck4decode(lastWordOfMsg) == len(lastWordOfMsg):
-                enterMessage = input("\nLast word can't be all numbers, Please Re-enter:\n")
+            while numCheck4decode(lastWordOfMsg):
+                enterMessage = input("\nLast word can't contain all numbers, Please Re-enter:\n")
+
+                spaces = spaceCheck(enterMessage)
+                while spaces == len(enterMessage) + 1:
+                    enterMessage = input("\nERROR, You left it blank! Please write something\n")    
+                    spaces = spaceCheck(enterMessage)
+
                 actualTextArr = enterMessage.split()
                 lastWordOfMsg = actualTextArr.pop()
                 numCheck4decode(lastWordOfMsg)
@@ -133,12 +141,19 @@ while run:
             while len(enterMessage.split()) == 1:
                 enterMessage = input("\nMake sure to put the entire cipher text (You entered one word only):\n")
 
+                # blank check
+                spaces = spaceCheck(enterMessage)
+                while spaces == len(enterMessage) + 1:
+                    enterMessage = input("\nERROR, You left it blank! Please write something\n")    
+                    spaces = spaceCheck(enterMessage)
+
                 # we need to check if the last word has only numbers again --------------------------------------
+                # This may seem repeated but it is necessary since the enterMessage changes
                 actualTextArr = enterMessage.split()
                 lastWordOfMsg = actualTextArr.pop()
                 numCheck4decode(lastWordOfMsg)
-                while numCheck4decode(lastWordOfMsg) == len(lastWordOfMsg):
-                    enterMessage = input("\nLast word can't be all numbers, Please Re-enter:\n")
+                while numCheck4decode(lastWordOfMsg):
+                    enterMessage = input("\nLast word can't contain all numbers, Please Re-enter:\n")
                     actualTextArr = enterMessage.split()
                     lastWordOfMsg = actualTextArr.pop()
                     numCheck4decode(lastWordOfMsg)
