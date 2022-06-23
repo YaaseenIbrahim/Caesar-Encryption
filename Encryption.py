@@ -82,16 +82,18 @@ def caeser(start_text, shift_amount, process):
 run = True
 while run:
     enterDirection = input("Type 'encode' to encrypt and 'decode' to decrypt data:\n").lower()
-
+    
     # Validation for inputting something other than encode or decode
     if enterDirection == "encode" or enterDirection == "decode":
         enterMessage = input("\nEnter the message:\n").lower()
 
+        # When they input blank for enterMessage
         spaces = spaceCheck(enterMessage)
         while spaces == len(enterMessage) + 1:
             enterMessage = input("\nERROR, You left it blank! Please write something\n")    
             spaces = spaceCheck(enterMessage)
 
+        
         if enterDirection == "encode":
             enterStep = input("\nEnter the step number:\n")
             stepAsString = numCheck() #numCheck() would contain return value
@@ -112,8 +114,14 @@ while run:
 
             # Checking if only 1 word decode
             while len(actualTextArr) == 1:
-                enterMessage = input("\nMake sure to put the entire cipher text:\n")
-            spaceCheck(enterMessage)
+                enterMessage = input("\nMake sure to put the entire cipher text (You entered one word only):\n")
+        
+                spaces = spaceCheck(enterMessage)
+                while spaces == len(enterMessage) + 1:
+                    enterMessage = input("\nERROR, You left it blank! Please write something\n")
+                    spaces = spaceCheck(enterMessage)
+                
+                actualTextArr = enterMessage.split()
             
             encodedStringStep = actualTextArr.pop()
             decodeNumcheck(encodedStringStep)
