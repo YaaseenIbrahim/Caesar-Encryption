@@ -6,47 +6,48 @@ numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
 print("Welcome to Caeser cipher encryptor\n")
 spaceArr = [""]
 
-def decodeNumcheck(enterStep):
-    count2 = 0
+def numCheck():
+    """Only takes numbers into account"""
+    #Putting only the number part of step as step
+    notStep = []
+    splitStep = []
+    step_string = ''
     for i in enterStep:
         if i in numbers:
-            count2 += 1
-    while count2 > 0:
-        count2 = 0
-        enterMessage = input("\nInput the cipher text! (The last word should not contain any numbers):\n")
-        enterStep = actualTextArr.pop()
-        for i in enterStep:
-            if i in numbers:
-                count2 += 1
-    return enterStep
+            splitStep.append(i)
+        elif i != ' ':
+            notStep.append(i)
+    step_string = "".join(splitStep)
+    rem_step = ''
+    if notStep != []:
+        rem_step = "".join(notStep)
+        print(f"\nFor your information these characters are not used in the step: {rem_step}")
 
-def numCheck():
-        """Checks if there is a number"""
-        #Putting only the number part of step as step
-        notStep = []
-        splitStep = []
-        step_string = ''
-        for i in enterStep:
-            if i in numbers:
-                splitStep.append(i)
-            elif i != ' ':
-                notStep.append(i)
-        step_string = "".join(splitStep)
-        rem_step = ''
-        if notStep != []:
-            rem_step = "".join(notStep)
-            print(f"\nFor your information these characters are not used in the step: {rem_step}")
-             
-        return step_string
+    return step_string
+
+
+def decodeNumCheck(num):
+    """Checks if the last word (step) of cipher text has numbers"""
+    countNum = 0
+    for i in num:
+        if i in numbers:
+            countNum += 1
+        if countNum > 0:
+            return True
+    return False
+
 
 def spaceCheck(spac):
     """Checks if the entire string is empty"""
     count = 0
-    spac = enterMessage.split(" ")
-    for i in spac:
+    spacAsArr = spac.split(" ")
+    for i in spacAsArr:
         if i in spaceArr:
             count += 1
-    return count
+    if len(spacAsArr) == count:
+        return True
+    return False
+
 # function base:
 def caeser(start_text, shift_amount, process):
     if process == "encode":
@@ -82,26 +83,23 @@ def caeser(start_text, shift_amount, process):
 run = True
 while run:
     enterDirection = input("Type 'encode' to encrypt and 'decode' to decrypt data:\n").lower()
-    
+
     # Validation for inputting something other than encode or decode
     if enterDirection == "encode" or enterDirection == "decode":
         enterMessage = input("\nEnter the message:\n").lower()
 
         # When they input blank for enterMessage
-        spaces = spaceCheck(enterMessage)
-        while spaces == len(enterMessage) + 1:
-            enterMessage = input("\nERROR, You left it blank! Please write something\n")    
-            spaces = spaceCheck(enterMessage)
+        while spaceCheck(enterMessage):
+            enterMessage = input("\nERROR, You left it blank! Please write something\n")
 
-        
         if enterDirection == "encode":
             enterStep = input("\nEnter the step number:\n")
-            stepAsString = numCheck() #numCheck() would contain return value
+            stepAsString = numCheck()  # numCheck() would contain return value
 
-            while stepAsString == "":
+            while stepAsString == "": # If no number then we call numCheck() again
                 enterStep = input("\nPlease enter a number:\n")
                 stepAsString = numCheck()
-            
+
             step = int(stepAsString)
             stepForAlphabet = step % 26
             caeser(enterMessage, stepForAlphabet, enterDirection)
@@ -110,23 +108,29 @@ while run:
        #------------------------------------------------------------------------------------------
 
         if enterDirection == "decode":
+            
             actualTextArr = enterMessage.split()
-
-            # Checking if only 1 word decode
-            while len(actualTextArr) == 1:
-                enterMessage = input("\nMake sure to put the entire cipher text (You entered one word only):\n")
-        
-                spaces = spaceCheck(enterMessage)
-                while spaces == len(enterMessage) + 1:
-                    enterMessage = input("\nERROR, You left it blank! Please write something\n")
-                    spaces = spaceCheck(enterMessage)
-                
-                actualTextArr = enterMessage.split()
-            
             enterStep = actualTextArr.pop()
-            # decodeNumcheck(enterStep)
-            message_without_step = ''.join(actualTextArr)
             
+            # Checking if only 1 word decode
+            while len(enterMessage.split()) == 1 or decodeNumCheck(enterStep):
+                
+                if len(enterMessage.split()) == 1:
+                    enterMessage = input("\nMake sure to put the entire cipher text (You entered one word only):\n")
+
+                # Blank checking one-word re-enter
+                while spaceCheck(enterMessage):
+                    enterMessage = input("\nERROR, You left it blank! Please write something\n")
+
+                # Checking if entered step has any numbers
+                actualTextArr = enterMessage.split()
+                enterStep = actualTextArr.pop()
+                if decodeNumCheck(enterStep):
+                    enterMessage = input("\nLast word can't contain any numbers, Please Re-enter:\n")
+        
+                # ------------------------------------------------------------------------------------ - - - - - - - - - - - - - -
+                
+            message_without_step = ' '.join(actualTextArr)
             encodedStepString = ""
             for i in enterStep:
                 if i in alphabet:
@@ -134,15 +138,16 @@ while run:
                     step = int(encodedStepString) * -1
             stepForAlphabet = step % 26
             caeser(message_without_step, stepForAlphabet, enterDirection)
-        
+
         rep = True
         while rep:  # Validation for if its not Y or N
             choice = input("\nDo you want to Continue encrypting? Type 'Y' or 'N':\n").lower()
             if choice == 'n' or choice == 'y':
+                encodedStepString = ""
                 rem_step = ''
                 rep = False
         if choice == "n":
-                run = False
+            run = False
     else:
         print("SYNTAX ERROR, You have to write encode or decode only")
         choice = input("Type y to try again and n to stop:\n").lower()
