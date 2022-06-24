@@ -37,6 +37,16 @@ def decodeNumCheck(num):
     return False
 
 
+def numCheck4decode(num):
+    """checks if the last word (step) of cipher text is all numbers"""
+    countNum = 0
+    for i in num:
+        if i in numbers:
+            countNum += 1
+        if countNum > 0:
+            return True
+    return False
+
 def spaceCheck(spac):
     """Checks if the entire string is empty"""
     count = 0
