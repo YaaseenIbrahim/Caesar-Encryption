@@ -1,0 +1,15 @@
+body,
+html {
+    margin: 0;
+}
+#page{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+#main-container{
+    width: 60rem;
+    margin-top: 7.5rem;
+    border: 1px solid black;
+    height: 40rem;
+}
