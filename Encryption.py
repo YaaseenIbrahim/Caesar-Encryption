@@ -26,19 +26,8 @@ def numCheck():
     return step_string
 
 
-def decodeNumCheck(num):
+def hasAnyNums(num):
     """Checks if the last word (step) of cipher text has numbers"""
-    countNum = 0
-    for i in num:
-        if i in numbers:
-            countNum += 1
-        if countNum > 0:
-            return True
-    return False
-
-
-def numCheck4decode(num):
-    """checks if the last word (step) of cipher text is all numbers"""
     countNum = 0
     for i in num:
         if i in numbers:
@@ -123,7 +112,7 @@ while run:
             enterStep = actualTextArr.pop()
             
             # Checking if only 1 word decode
-            while len(enterMessage.split()) == 1 or decodeNumCheck(enterStep):
+            while len(enterMessage.split()) == 1 or hasAnyNums(enterStep):
                 
                 if len(enterMessage.split()) == 1:
                     enterMessage = input("\nMake sure to put the entire cipher text (You entered one word only):\n")
@@ -135,7 +124,7 @@ while run:
                 # Checking if entered step has any numbers
                 actualTextArr = enterMessage.split()
                 enterStep = actualTextArr.pop()
-                if decodeNumCheck(enterStep):
+                if hasAnyNums(enterStep):
                     enterMessage = input("\nLast word can't contain any numbers, Please Re-enter:\n")
         
                 # ------------------------------------------------------------------------------------ - - - - - - - - - - - - - -
