@@ -6,7 +6,7 @@ numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
 print("Welcome to Caeser cipher encryptor\n")
 spaceArr = [""]
 
-def numCheck():
+def numTaker():
     """Only takes numbers into account"""
     #Putting only the number part of step as step
     notStep = []
@@ -27,7 +27,7 @@ def numCheck():
 
 
 def hasAnyNums(num):
-    """Checks if the last word (step) of cipher text has numbers"""
+    """Checks if the input has any numbers"""
     countNum = 0
     for i in num:
         if i in numbers:
@@ -93,13 +93,13 @@ while run:
 
         if enterDirection == "encode":
             enterStep = input("\nEnter the step number:\n")
-            stepAsString = numCheck()  # numCheck() would contain return value
-
-            while stepAsString == "": # If no number then we call numCheck() again
+            
+            # Forcing enterStep to have some numbers
+            while not hasAnyNums(enterStep):
                 enterStep = input("\nPlease enter a number:\n")
-                stepAsString = numCheck()
-
-            step = int(stepAsString)
+            
+            # Only using num part of enterStep
+            step = int(numTaker())
             stepForAlphabet = step % 26
             caeser(enterMessage, stepForAlphabet, enterDirection)
             #Step is divided so the step cannot be above 25
@@ -114,7 +114,7 @@ while run:
             # Checking if only 1 word decode
             while len(enterMessage.split()) == 1 or hasAnyNums(enterStep):
                 
-                if len(enterMessage.split()) == 1:
+                while len(enterMessage.split()) == 1:
                     enterMessage = input("\nMake sure to put the entire cipher text (You entered one word only):\n")
 
                 # Blank checking one-word re-enter

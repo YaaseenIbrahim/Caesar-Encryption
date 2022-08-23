@@ -7,7 +7,7 @@ print("Welcome to Caeser cipher encryptor\n")
 spaceArr = [""]
 
 
-def numCheck():
+def numTaker():
     """Only takes numbers into account"""
     #Putting only the number part of step as step
     notStep = []
@@ -37,6 +37,17 @@ def hasAnyNums(num):
             return True
     return False
 
+def isAllNums(num):
+    """Checks if the input is only numbers"""
+    countNum = 0
+    numString = "".join(num.split())
+    for i in numString:
+        if i in numbers:
+            countNum += 1
+    if len(numString) == countNum and countNum > 1:
+        return True
+    return False
+
 def spaceCheck(spac):
     """Checks if the entire string is empty"""
     count = 0
@@ -49,7 +60,6 @@ def spaceCheck(spac):
     return False
 
 # function base:
-
 
 def caeser(start_text, shift_amount, process):
     if process == "encode":
@@ -89,27 +99,25 @@ while run:
         # When they input blank for enterMessage
         while spaceCheck(enterMessage):
             enterMessage = input("\nERROR, You left it blank! Please write something\n")
-
-        if enterDirection == "encode":
-            enterStep = input("\nEnter the step number:\n")
             
-            # Checking if step has any numbers
-            while not hasAnyNums(enterStep):
-                enterStep = input("\nPlease enter a number:\n")
-
-            stepAsString = numCheck() #Only taking number part of step
-            step = int(stepAsString)
-            stepForAlphabet = step % 26
-            caeser(enterMessage, stepForAlphabet, enterDirection)
-            #Step is divided so the step cannot be above 25
-
-       #------------------------------------------------------------------------------------------
+        enterStep = input("\nEnter the step number:\n")
+        
+        # Forcing enterStep to have some numbers
+        while not hasAnyNums(enterStep):
+            enterStep = input("\nPlease enter a number:\n")
+                
+        if enterDirection == "encode":
+            step = int(numTaker())
 
         if enterDirection == "decode":
             
-            step = int(input("\nEnter the step number:\n")) * -1
-            stepForAlphabet = step % 26
-            caeser(enterMessage, stepForAlphabet, enterDirection)
+            while not isAllNums(enterStep):
+                enterStep = input("\nStep should only contain numbers:\n")
+                
+            step = int(enterStep) * -1
+            
+        stepForAlphabet = step % 26
+        caeser(enterMessage, stepForAlphabet, enterDirection)
 
         rep = True
         while rep:  # Validation for if its not Y or N
