@@ -11,7 +11,7 @@ def numTaker():
     #Putting only the number part of step as step
     notStep = []
     splitStep = []
-    step_string = ''
+    step_string = ''    
     for i in enterStep:
         if i in numbers:
             splitStep.append(i)
@@ -116,16 +116,16 @@ while run:
                 
                 while len(enterMessage.split()) == 1:
                     enterMessage = input("\nMake sure to put the entire cipher text (You entered one word only):\n")
-
-                # Blank checking one-word re-enter
-                while spaceCheck(enterMessage):
-                    enterMessage = input("\nERROR, You left it blank! Please write something\n")
+                    while spaceCheck(enterMessage):
+                        enterMessage = input("\nERROR, You left it blank! Please write something\n")                
 
                 # Checking if entered step has any numbers
                 actualTextArr = enterMessage.split()
                 enterStep = actualTextArr.pop()
                 if hasAnyNums(enterStep):
                     enterMessage = input("\nLast word can't contain any numbers, Please Re-enter:\n")
+                    while spaceCheck(enterMessage):
+                        enterMessage = input("\nERROR, You left it blank! Please write something\n")
         
                 # ------------------------------------------------------------------------------------ - - - - - - - - - - - - - -
                 
