@@ -1,0 +1,53 @@
+@import url(fonts.css);
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    ---headerGreen: #20a758;
+    ---top: #6EC592;
+    ---middle: #58D68D;
+    ---bottom: #4EB79B;
+    ;
+}
+
+#topSection {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(to right, #009b72 50%, #20a758 );
+}
+
+.header {
+    font-size: 3em;
+    margin-top: 5px;
+    text-align: center;
+    color: whitesmoke;
+    font-family: causten-black;
+}
+
+#prism {
+  margin-left: 0;
+    width: 500px;
+    transform: translateY(-60%);
+    transform: translateX(-50%);
+    border: 1px solid black;
+    
+}
+.infor{
+    position: absolute;
+    top: 50%;
+    left: -50%;
+    transform: translateY(-50%);
+}
+.overlay{
+    width: 0;
+    height: 0;
+    border-top: 100vw solid white;
+    border-bottom: 100vw solid white;
+    border-right: 75vw solid transparent;
+    border-left: 75vw solid white;
+}
