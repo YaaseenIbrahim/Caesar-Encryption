@@ -10,6 +10,12 @@
     ---top: #6EC592;
     ---middle: #58D68D;
     ---bottom: #4EB79B;
+    ---test:#16B58C;
+    ---complementary1:#1AC490;
+    ---complementary2:#3DCDA1;
+    ---complementary3:#1BB586;
+    ---complementary4:#3AC298;
+
     ;
 }
 
@@ -31,10 +37,8 @@
 
 #prism {
   margin-left: 0;
-    width: 500px;
-    transform: translateY(-60%);
-    transform: translateX(-50%);
-    border: 1px solid black;
+  width: 450px;
+  transform: translate(-64%, -50%)
     
 }
 .infor{
@@ -46,8 +50,8 @@
 .overlay{
     width: 0;
     height: 0;
-    border-top: 100vw solid white;
-    border-bottom: 100vw solid white;
-    border-right: 75vw solid transparent;
-    border-left: 75vw solid white;
+    border-top:30vw solid white;
+    border-bottom: 20vw solid white;
+    border-right: 15vw solid transparent;
+    border-left: 73vw solid white;
 }
