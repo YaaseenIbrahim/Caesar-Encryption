@@ -1,0 +1,125 @@
+#topSection {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.header {
+    font-size: 3em;
+    margin-top: 5px;
+    text-align: center;
+    color: whitesmoke;
+    font-family: causten-black;
+}
+
+#prism {
+    width: 495px;
+    transform: translate(-62%, -50%);
+}
+
+.overlay {
+    position: absolute;
+    top: 50%;
+    left: -50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-top: 30vw solid white;
+    border-bottom: 20vw solid white;
+    border-right: 11.75vw solid transparent;
+    border-left: 73vw solid white;
+}
+
+.greenlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 77%;
+    height: 100%;
+    font-family: causten-extrabold;
+}
+
+.options {
+    ---height: 220px;
+    ---width: 125px;
+    gap: 2.5rem;
+    margin-left: 10rem;
+    margin-top: 2rem;
+}
+
+.diamond {
+    display: flex;
+    flex-direction: column;
+}
+.diamond:hover{
+    transition: 3s ease-in-out opacity; 
+}
+
+.topDiamond {
+    border-bottom: calc(var(---height) - 75px) solid whitesmoke;
+    border-right: var(---width) solid transparent;
+    border-left: var(---width) solid transparent;
+}
+
+.bottomDiamond {
+    border-top: var(---height) solid whitesmoke;
+    border-right: var(---width) solid transparent;
+    border-left: var(---width) solid transparent;
+}
+
+.text:hover {
+    opacity: 0.7;
+}
+
+/* Selects the keys */
+.keyTextContainer>:first-child {
+    margin: auto;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.keyTextContainer>:first-child:hover {
+    opacity: 0.8;
+}
+
+.keyTextContainer {
+    position: absolute;
+    flex-direction: column;
+    margin-top: -7rem;
+}
+
+/* Symmetric keyTextContainer */
+.options>.flex-parent:first-of-type>.keyTextContainer {
+    margin-top: -6.4rem;
+}
+
+.key {
+    width: 4.75rem;
+}
+
+#key {
+    margin-bottom: 0.1rem;
+    width: 4.9rem;
+}
+
+#key1 {
+    position: absolute;
+    top: 1rem;
+}
+
+.text {
+    font-size: 1.75rem;
+    flex-direction: column;
+    background-clip: none;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: opacity 0.15s ease-in-out;
+}
+
+/* Assymetric text */
+.flex-parent+.text {
+    margin-top: 0.9rem;
+}
+
+.text>span:first-of-type {
+    font-size: 40px;
+}
