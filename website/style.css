@@ -28,7 +28,12 @@
 	justify-content: center;
 	align-items: center;
 }
-
+.flex-parent-col {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
 .material-symbols-outlined {
 	font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 48;
 }
