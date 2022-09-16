@@ -135,11 +135,11 @@
 }
 
 #triangle1 {
-	border-left: 48.5vw solid white;
+	border-left: 48vw solid white;
 }
 
 #triangle2 {
-	border-right: 48.5vw solid white;
+	border-right: 48vw solid white;
 }
 
 .prism-holder {
@@ -233,14 +233,16 @@
 	.key {
 		scale: 1;
 	}
-.text {
-	font-size: 1.75rem;
 
-}
-.toptext{
-	font-size: 40px;
-}
-	
+	.text {
+		font-size: 1.75rem;
+
+	}
+
+	.toptext {
+		font-size: 40px;
+	}
+
 
 	.overlay {
 		display: none;
@@ -264,22 +266,26 @@
 
 	}
 }
-@media (max-width:600px){
-	.options{
-		gap: 0rem;
+
+@media (max-width:600px) {
+	.options {
+		gap: 0;
 	}
-.diamondsvg,
+
+	.diamondsvg,
 	.key {
 		scale: 0.9;
 	}
-		.text {
-			font-size: 1.575rem;
-		}
-	
-		.toptext {
-			font-size: 36px;
-		}
+
+	.text {
+		font-size: 1.575rem;
+	}
+
+	.toptext {
+		font-size: 36px;
+	}
 }
+
 @keyframes flashlight {
 	0% {
 		border-right: 100000rem solid white;
