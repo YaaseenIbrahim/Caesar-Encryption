@@ -1,5 +1,4 @@
 #topSection {
-	height: 100vh;
 	position: relative;
 	overflow: hidden;
 }
@@ -116,7 +115,15 @@
 	font-size: 40px;
 }
 
-
+/* .scalarOptions{
+	margin: 0;
+	gap: 0;
+}
+.scalarDiamond{
+	width: 100%;
+	height: 100%;
+	border: 1px solid black;
+} */
 /* Mobile Prism Section */
 #mobilePrismSection {
 	display: none;
@@ -204,14 +211,15 @@
 	}
 
 	.overlay {
-		border-top: 47.5vw solid white;
-		border-bottom: 35vw solid white;
+		border-top: 50vw solid white;
+		border-bottom: 36.5vw solid white;
 		border-left: 77vw solid white;
+		border-right: 21vw solid transparent;
 	}
 
 	#prism {
 		scale: 0.85;
-		transform: translate(-70.5%, -57.5%);
+		transform: translate(-71%, -58.5%);
 	}
 }
 
@@ -223,7 +231,7 @@
 	}
 
 	.options {
-		margin: 0 4rem;
+		margin: 0;
 		width: 100%;
 		gap: 2rem;
 		justify-content: space-around;
@@ -267,6 +275,7 @@
 	}
 }
 
+/* Mobile small */
 @media (max-width:600px) {
 	.options {
 		gap: 0;
@@ -283,6 +292,37 @@
 
 	.toptext {
 		font-size: 36px;
+	}
+}
+
+@media (max-width:500px) {
+	.options {
+		gap: 0;
+	}
+
+	.diamondsvg,
+	.key {
+		scale: 0.9;
+	}
+
+	.key {
+		width: 15vw;
+	}
+
+	#key {
+		width: 15.25vw;
+	}
+
+	.diamondsvg {
+		width: 48vw;
+	}
+
+	.text {
+		font-size: 1.575rem;
+	}
+
+	.toptext {
+		font-size: 7vw;
 	}
 }
 
