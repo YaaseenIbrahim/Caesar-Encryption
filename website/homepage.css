@@ -1,6 +1,7 @@
 #topSection {
 	position: relative;
 	overflow: hidden;
+	min-height: 100vh;
 }
 
 .header {
@@ -14,20 +15,19 @@
 
 #prism {
 	width: 495px;
-	transform: translate(-62%, -50%);
+	transform: translate(-62.4%, -50%);
 }
 
 .overlay {
 	position: absolute;
 	top: 50%;
-	left: -50%;
 	transform: translateY(-50%);
 	width: 0;
 	height: 0;
-	border-top: 45vw solid white;
-	border-bottom: 33.75vw solid white;
-	border-right: 20vw solid transparent;
-	border-left: 73vw solid white;
+	border-top: 100vw solid white;
+	border-bottom: 90vw solid white;
+	border-right: 51.75vw solid transparent;
+	border-left: 23.5vw solid white;
 }
 
 .startup {
@@ -115,15 +115,6 @@
 	font-size: 40px;
 }
 
-/* .scalarOptions{
-	margin: 0;
-	gap: 0;
-}
-.scalarDiamond{
-	width: 100%;
-	height: 100%;
-	border: 1px solid black;
-} */
 /* Mobile Prism Section */
 #mobilePrismSection {
 	display: none;
@@ -177,14 +168,12 @@
 	}
 
 	.overlay {
-		border-top: 45vw solid white;
-		border-bottom: 34.75vw solid white;
-		border-left: 75vw solid white;
+	border-left: 27vw solid white;
 	}
 
 	#prism {
 		scale: 0.95;
-		transform: translate(-63.55%, -50%);
+		transform: translate(-63.45%, -50%);
 	}
 }
 
@@ -211,10 +200,7 @@
 	}
 
 	.overlay {
-		border-top: 50vw solid white;
-		border-bottom: 36.5vw solid white;
-		border-left: 77vw solid white;
-		border-right: 21vw solid transparent;
+	border-left: 28vw solid white;
 	}
 
 	#prism {
