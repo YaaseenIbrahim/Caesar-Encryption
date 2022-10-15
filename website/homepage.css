@@ -200,8 +200,12 @@
 
 /* Mobile */
 @media (max-width: 780px) {
+	#topSection{
+		height: 100vh;
+	}
 	.greenlay {
 		width: 100%;
+	
 	}
 
 	.options-container {
@@ -314,6 +318,11 @@
 	}
 
 
+}
+@media (max-width: 350px){
+	.options-container{
+		margin-top: 4rem;
+	}
 }
 
 @keyframes flashlight {
