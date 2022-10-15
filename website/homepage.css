@@ -10,7 +10,6 @@
 	text-align: center;
 	color: whitesmoke;
 	font-family: causten-black;
-	z-index: 10;
 }
 
 #prism {
@@ -43,29 +42,19 @@
 	font-family: causten-extrabold;
 }
 
-.options {
+.options-container {
 	gap: 2.5rem;
 	margin-left: 10rem;
 }
 
-/* Diamonds */
-.options>.flex-parent {
+.options {
 	opacity: 0;
 	animation: floatup 1.5s 2.3s forwards ease-in-out;
-	transition: transform 0.4s ease-out;
 }
 
-.options> :first-child {
+.options:first-of-type {
+	/* Option 1 */
 	animation: floatup 1.5s 2.1s forwards ease-in-out;
-}
-
-/* Selects the keys */
-.keyTextContainer> :first-child {
-	transition: opacity 0.2s ease-in-out;
-}
-
-.keyTextContainer> :first-child:hover {
-	opacity: 0.8;
 }
 
 .keyTextContainer {
@@ -75,22 +64,22 @@
 }
 
 /* Symmetric keyTextContainer */
-.options>.flex-parent:first-of-type>.keyTextContainer {
+.options:first-of-type>.keyTextContainer {
 	margin-top: -6.4rem;
 }
 
 .key {
 	width: 4.75rem;
+	transition: opacity 0.2s ease-in-out;
+}
+
+.key:hover {
+	opacity: 0.8;
 }
 
 #key {
 	margin-bottom: 0.1rem;
 	width: 4.9rem;
-}
-
-#key1 {
-	position: absolute;
-	top: 1rem;
 }
 
 .text {
@@ -108,7 +97,7 @@
 
 /* Assymetric text */
 .flex-parent+.text {
-	margin-top: 0.9rem;
+	margin-top: 0.5rem;
 }
 
 .toptext {
@@ -142,14 +131,14 @@
 
 .prism-holder {
 	width: 100%;
+	margin-top: -1px;
 	height: 20rem;
 	background-color: White;
 }
 
 /* Medium */
 @media (max-width: 1100px) {
-
-	.options {
+	.options-container {
 		margin-left: 8rem;
 		gap: 1.5rem;
 	}
@@ -168,7 +157,7 @@
 	}
 
 	.overlay {
-	border-left: 27vw solid white;
+		border-left: 27vw solid white;
 	}
 
 	#prism {
@@ -179,8 +168,7 @@
 
 /* Small */
 @media (max-width: 875px) {
-
-	.options {
+	.options-container {
 		margin-left: 7rem;
 		margin-top: 1rem;
 		gap: 0;
@@ -200,7 +188,7 @@
 	}
 
 	.overlay {
-	border-left: 28vw solid white;
+		border-left: 28vw solid white;
 	}
 
 	#prism {
@@ -216,7 +204,7 @@
 		width: 100%;
 	}
 
-	.options {
+	.options-container {
 		margin: 0;
 		width: 100%;
 		gap: 2rem;
@@ -237,16 +225,15 @@
 		font-size: 40px;
 	}
 
-
 	.overlay {
 		display: none;
 	}
 
-	.options>.flex-parent {
+	.options {
 		animation-delay: 0.3s;
 	}
 
-	.options> :first-child {
+	.options:first-of-type {
 		animation-delay: 0.1s;
 	}
 
@@ -257,13 +244,12 @@
 	#prism {
 		width: 495px;
 		transform: translate(1.5rem, -4rem);
-
 	}
 }
 
 /* Mobile small */
 @media (max-width:600px) {
-	.options {
+	.options-container {
 		gap: 0;
 	}
 
@@ -281,35 +267,53 @@
 	}
 }
 
+/* Mobile Scalable */
 @media (max-width:500px) {
-	.options {
-		gap: 0;
-	}
-
-	.diamondsvg,
 	.key {
-		scale: 0.9;
-	}
-
-	.key {
-		width: 15vw;
+		scale: none;
+		width: 20vw;
+		margin-right: 5px;
 	}
 
 	#key {
-		width: 15.25vw;
+		margin: auto;
+		width: 20vw;
+	}
+
+	.options-container {
+		flex-direction: column;
+	}
+
+	.options {
+		width: 75%;
+		background-color: white;
+		padding: 1rem;
+		border-radius: 20px;
 	}
 
 	.diamondsvg {
-		width: 48vw;
+		display: none;
+	}
+
+	.prism-holder {
+		height: 100vw;
+	}
+
+	#prism {
+		width: 100vw;
+		transform: translate(5vw, -35vw);
 	}
 
 	.text {
-		font-size: 1.575rem;
+		font-size: 9vw;
+		flex: 4;
 	}
 
 	.toptext {
-		font-size: 7vw;
+		font-size: 11vw;
 	}
+
+
 }
 
 @keyframes flashlight {

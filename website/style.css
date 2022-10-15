@@ -7,6 +7,7 @@
 
 :root {
 	---headerGreen: #20a758;
+	---blueGreen: #009b72;
 	---top: #6ec592;
 	---middle: #58d68d;
 	---bottom: #4eb79b;
@@ -18,7 +19,7 @@
 }
 
 .see-through {
-	background: linear-gradient(to right, #009b72 50%, #20a758);
+	background: linear-gradient(to right, var(---blueGreen) 50%, var(---headerGreen));
 	background-attachment: fixed;
 }
 

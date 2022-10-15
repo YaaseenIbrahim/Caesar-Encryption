@@ -3,65 +3,53 @@
 
 <head>
     <title>Caesar Encryption</title>
-
     <link rel="stylesheet" href="website/style.css">
     <link rel="stylesheet" href="website/homepage.css">
     <link rel="icon" href="" type="/icon.png">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="website/script.js" defer></script>
 
 </head>
 
 <body class="see-through">
     <section id="topSection">
-
         <div class="header">
             <div>Caesar Encryption</div>
         </div>
-
         <!-- White part -->
-
         <div class="overlay">
-            <img src="website/Pics/prism-nosprinkle-nooutline.svg" alt="Prism" class="noselect" id="prism">
+            <img src="website/Pics/Prism.svg" alt="Prism" class="noselect" id="prism">
         </div>
-
         <!-- Green part -->
         <div class="greenlay flex-parent">
-            <div class="options flex-parent">
+            <div class="options-container flex-parent">
                 <!-- Symmetric Option -->
-                <div class="flex-parent">
+                <div class="options flex-parent">
                     <img src="website/Pics/Diamond.svg"  class="noselect diamondsvg" alt="Option 1">
                     <div class="keyTextContainer flex-parent">
-                        <img class="key noselect" id="key" src="website/Pics/key.svg" />
-                        <div class="text flex-parent see-through noselect">
+                        <img class="key wrapping noselect" id="key" src="website/Pics/key.svg" />
+                        <div class="text wrapping  flex-parent see-through noselect">
                             <span class="toptext">Symmetric</span>
                             <span>Encryption</span>
                         </div>
                     </div>
                 </div>
-                <!-- Asymetric ption -->
-                <div class="flex-parent">
+                <!-- Asymmetric option -->
+                <div class="options flex-parent">
                     <img src="website/Pics/Diamond.svg"  class="noselect diamondsvg" alt="Option 2">
-
                     <div class="keyTextContainer flex-parent">
-                        <div class="flex-parent">
-                            <img src="website/Pics/key2.svg" class="key" id="key1" />
-                            <img src="website/Pics/key2.svg" class="key" />
-                        </div>
-                        <div class="text flex-parent see-through noselect">
+                        <img class="key wrapping noselect" src="website/Pics/key2.svg" asymkey>
+                        <div class="text wrapping flex-parent see-through noselect">
                             <span class="toptext">Asymmetric</span>
                             <span>Encryption</span>
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
-
-
     </section>
     <!-- Mobile prism shining up -->
     <section id="mobilePrismSection" class="flex-parent-col">
@@ -69,12 +57,12 @@
             <div id="triangle1" class="triangles"></div>
             <div id="triangle2" class="triangles"></div>
         </div>
-
         <div class="prism-holder flex-parent">
-            <img src="website/Pics/prism-nosprinkle-nooutline.svg" alt="Prism" class="noselect" id="prism">
+            <img src="website/Pics/Prism.svg" alt="Prism" class="noselect" id="prism">
         </div>
-
     </section>
+
+    
 </body>
 
 </html>
