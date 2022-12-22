@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1277.7297354951952" height="949.0467192177201" viewBox="258.94425797945183 -3.6797010035769517 1277.7297354951952 949.0467192177201" preserveAspectRatio="none">
+  <g>
+    <defs>
+      <rect x="398.2893437363574" y="135.84365860528294" width="670.3655705067372" height="670.0000000000002" id="s-Rectangle_5-d1224-path"></rect>
+      <filter filterUnits="userSpaceOnUse" x="253.94425797945183" y="-8.679701003576952" width="966.1268098324136" height="966.1177870295855" color-interpolation-filters="sRGB" id="s-Rectangle_5-d1224_effects">
+        <feOffset dx="7.071067811865475" dy="7.0710678118654755" input="SourceAlpha"></feOffset>
+        <feGaussianBlur result="DROP_SHADOW_0_blur" stdDeviation="5"></feGaussianBlur>
+        <feFlood flood-color="#404040" flood-opacity="1.0"></feFlood>
+        <feComposite operator="in" in2="DROP_SHADOW_0_blur"></feComposite>
+        <feComposite in="SourceGraphic" result="DROP_SHADOW_0"></feComposite>
+      </filter>
+    </defs>
+    <g transform="rotate(44.0 732.472128989726 469.84365860528305)" style="mix-blend-mode:normal" filter="url(#s-Rectangle_5-d1224_effects)">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-Rectangle_5-d1224-path" fill="#1BB586" fill-opacity="1.0" stroke-width="1.0" stroke="#000000"></use>
+    </g>
+  </g>
+  <g>
+    <defs>
+      <rect x="464.819113256577" y="207.2215360941293" width="537.1622915073795" height="537.0000000000001" id="s-Rectangle_6-d1224-path"></rect>
+    </defs>
+    <g transform="rotate(44.0 732.4002590102667 474.72153609412936)" style="mix-blend-mode:normal">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-Rectangle_6-d1224-path" fill="#14936D" fill-opacity="1.0" stroke-width="1.0" stroke="#000000"></use>
+    </g>
+  </g>
+  <g>
+    <defs>
+      <rect x="527.6949325243453" y="269.54209961542773" width="411.3532742591442" height="411.272128505454" id="s-Rectangle_7-d1224-path"></rect>
+      <filter filterUnits="userSpaceOnUse" x="253.94425797945183" y="-8.679701003576952" width="966.1268098324136" height="966.1177870295855" color-interpolation-filters="sRGB" id="s-Rectangle_7-d1224_effects">
+        <feOffset dx="7.071067811865475" dy="7.0710678118654755" input="SourceAlpha"></feOffset>
+        <feGaussianBlur result="DROP_SHADOW_0_blur" stdDeviation="5"></feGaussianBlur>
+        <feFlood flood-color="#404040" flood-opacity="1.0"></feFlood>
+        <feComposite operator="in" in2="DROP_SHADOW_0_blur"></feComposite>
+        <feComposite in="SourceGraphic" result="DROP_SHADOW_0"></feComposite>
+      </filter>
+    </defs>
+    <g transform="rotate(44.0 732.3715696539174 474.17816386815474)" style="mix-blend-mode:normal" filter="url(#s-Rectangle_7-d1224_effects)">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-Rectangle_7-d1224-path" fill="#1BB586" fill-opacity="1.0" stroke-width="1.0" stroke="#000000"></use>
+    </g>
+  </g>
+  <g>
+    <defs>
+      <rect x="585.5922128607953" y="323.00431535319774" width="295.75983225786104" height="295.67868650417086" id="s-Rectangle_8-d1224-path"></rect>
+    </defs>
+    <g transform="rotate(44.0 732.4721289897258 469.84365860528317)" style="mix-blend-mode:normal">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-Rectangle_8-d1224-path" fill="#82E5C8" fill-opacity="1.0" stroke-width="1.0" stroke="#000000"></use>
+    </g>
+  </g>
+  <g>
+    <defs>
+      <rect x="815.3241383250914" y="124.34985514955576" width="597.0" height="597.0000000000002" id="s-Rectangle_1-d1224-path"></rect>
+      <filter filterUnits="userSpaceOnUse" x="253.94425797945183" y="-8.679701003576952" width="1294.8008033070607" height="966.1177870295855" color-interpolation-filters="sRGB" id="s-Rectangle_1-d1224_effects">
+        <feOffset dx="7.071067811865475" dy="7.0710678118654755" input="SourceAlpha"></feOffset>
+        <feGaussianBlur result="DROP_SHADOW_0_blur" stdDeviation="5"></feGaussianBlur>
+        <feFlood flood-color="#404040" flood-opacity="1.0"></feFlood>
+        <feComposite operator="in" in2="DROP_SHADOW_0_blur"></feComposite>
+        <feComposite in="SourceGraphic" result="DROP_SHADOW_0"></feComposite>
+      </filter>
+    </defs>
+    <g transform="rotate(45.0 1112.8241383250916 421.8498551495559)" style="mix-blend-mode:normal" filter="url(#s-Rectangle_1-d1224_effects)">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-Rectangle_1-d1224-path" fill="#1BB586" fill-opacity="1.0" stroke-width="1.0" stroke="#000000"></use>
+    </g>
+  </g>
+  <g>
+    <defs>
+      <rect x="884.3241383250912" y="193.34985514955608" width="459.0" height="459.0" id="s-Rectangle_2-d1224-path"></rect>
+    </defs>
+    <g transform="rotate(45.0 1112.824138325091 421.8498551495561)" style="mix-blend-mode:normal">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-Rectangle_2-d1224-path" fill="#FFFFFF" fill-opacity="1.0" stroke-width="1.0" stroke="#000000"></use>
+    </g>
+  </g>
+  <g>
+    <defs>
+      <rect x="946.8241383250916" y="257.2640687119291" width="334.0" height="334.0" id="s-Rectangle_3-d1224-path"></rect>
+      <filter filterUnits="userSpaceOnUse" x="253.94425797945183" y="-8.679701003576952" width="1294.8008033070607" height="966.1177870295855" color-interpolation-filters="sRGB" id="s-Rectangle_3-d1224_effects">
+        <feOffset dx="7.071067811865475" dy="7.0710678118654755" input="SourceAlpha"></feOffset>
+        <feGaussianBlur result="DROP_SHADOW_0_blur" stdDeviation="5"></feGaussianBlur>
+        <feFlood flood-color="#404040" flood-opacity="1.0"></feFlood>
+        <feComposite operator="in" in2="DROP_SHADOW_0_blur"></feComposite>
+        <feComposite in="SourceGraphic" result="DROP_SHADOW_0"></feComposite>
+      </filter>
+    </defs>
+    <g transform="rotate(45.0 1112.8241383250916 423.2640687119291)" style="mix-blend-mode:normal" filter="url(#s-Rectangle_3-d1224_effects)">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-Rectangle_3-d1224-path" fill="#1BB586" fill-opacity="1.0" stroke-width="1.0" stroke="#000000"></use>
+    </g>
+  </g>
+  <g>
+    <defs>
+      <rect x="1008.4440148885942" y="318.8839452754314" width="210.7602468729949" height="210.76024687299468" id="s-Rectangle_4-d1224-path"></rect>
+    </defs>
+    <g transform="rotate(45.0 1112.8241383250916 423.26406871192876)" style="mix-blend-mode:normal">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-Rectangle_4-d1224-path" fill="#FFFFFF" fill-opacity="1.0" stroke-width="1.0" stroke="#000000"></use>
+    </g>
+  </g>
+</svg>

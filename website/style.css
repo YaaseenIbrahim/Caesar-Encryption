@@ -1,0 +1,56 @@
+@import url(fonts.css);
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+:root {
+	---headerGreen: #20a758;
+	---blueGreen: #009970;
+	---top: #6ec592;
+	---middle: #58d68d;
+	---bottom: #4eb79b;
+	---test: #16b58c;
+	---complementary1: #1ac490;
+	---complementary2: #3dcda1;
+	---complementary3: #1bb586;
+	---complementary4: #3ac298;
+}
+
+.see-through {
+	background: linear-gradient(to right, var(---blueGreen) 50%, var(---headerGreen));
+	background-attachment: fixed;
+}
+/* .ff{
+	background-image: url("https://t3.ftcdn.net/jpg/05/20/04/56/360_F_520045644_p0HXbREt9zSLQmthKezfgIZxvd0nfQ7n.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-color: #04795a;
+	background-blend-mode: normal;
+} */
+
+.flex-parent {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.flex-parent-col {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.material-symbols-outlined {
+	font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 48;
+}
+
+.noselect {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+

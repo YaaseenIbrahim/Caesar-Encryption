@@ -1,0 +1,20 @@
+@font-face {
+    font-family: encrypted;
+    src: url(Fonts/Encrypted.ttf);
+}
+@font-face {
+    font-family: causten-black;
+    src: url(Fonts/Causten-Black.otf);
+}
+@font-face {
+    font-family: causten-extrabold;
+    src: url(Fonts/Causten-ExtraBold.otf);
+}
+@font-face {
+    font-family: causten-bold;
+    src: url(Fonts/Causten-Bold.otf);
+}
+@font-face {
+    font-family: causten-semibold;
+    src: url(Fonts/Causten-SemiBold.otf);
+}

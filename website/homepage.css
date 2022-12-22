@@ -1,0 +1,361 @@
+#topSection {
+	position: relative;
+	overflow: hidden;
+	min-height: 100vh;
+}
+
+.header {
+	font-size: 3em;
+	margin-top: 5px;
+	text-align: center;
+	font-family: causten-black;
+}
+.headtext{
+	z-index: 3;
+	display: inline-block;
+	position: relative;
+	color: whitesmoke;
+}
+.headtext::before{
+	content: "";
+	left: 0;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	bottom: 0;
+}
+
+#prism {
+	width: 495px;
+	transform: translate(-62.4%, -50%);
+}
+
+.overlay {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 0;
+	height: 0;
+	border-top: 100vw solid whitesmoke;
+	border-bottom: 90vw solid whitesmoke;
+	border-right: 51.75vw solid transparent;
+	border-left: 23.5vw solid whitesmoke;
+}
+
+.startup {
+	animation: flashlight ease-out 2.25s;
+}
+.greenlay {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 77%;
+	height: 100%;
+	font-family: causten-extrabold;
+}
+
+.options-container {
+	gap: 2.5rem;
+	margin-left: 10rem;
+}
+
+.options {
+	opacity: 0;
+	animation: floatup 1.5s 2.3s forwards ease-in-out;
+}
+
+.options:first-of-type {
+	/* Option 1 */
+	animation: floatup 1.5s 2.1s forwards ease-in-out;
+}
+
+.keyTextContainer {
+	position: absolute;
+	flex-direction: column;
+	margin-top: -7rem;
+}
+
+/* Symmetric keyTextContainer */
+.options:first-of-type>.keyTextContainer {
+	margin-top: -6.4rem;
+}
+
+.key {
+	width: 4.75rem;
+	transition: opacity 0.2s ease-in-out;
+}
+
+.key:hover {
+	opacity: 0.8;
+}
+
+#key {
+	margin-bottom: 0.1rem;
+	width: 4.9rem;
+}
+
+.text {
+	font-size: 1.75rem;
+	flex-direction: column;
+	background-clip: none;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	transition: opacity 0.15s ease-in-out;
+}
+
+.text:hover {
+	opacity: 0.7;
+}
+
+/* Assymetric text */
+.flex-parent+.text {
+	margin-top: 0.5rem;
+}
+
+.toptext {
+	font-size: 40px;
+}
+
+/* Mobile Prism Section */
+#mobilePrismSection {
+	display: none;
+}
+
+.triangle-holder {
+	width: 100%;
+	justify-content: space-between;
+}
+
+.triangles {
+	width: 0;
+	height: 0;
+	border-top: 50vw solid transparent;
+	animation: mobile-flashlight ease-out 1s;
+}
+
+#triangle1 {
+	border-left: 48vw solid whitesmoke;
+}
+
+#triangle2 {
+	border-right: 48vw solid whitesmoke;
+}
+
+.prism-holder {
+	width: 100%;
+	margin-top: -1px;
+	height: 20rem;
+	background-color: whitesmoke;
+}
+
+/* Medium */
+@media (max-width: 1100px) {
+	.options-container {
+		margin-left: 8rem;
+		gap: 1.5rem;
+	}
+
+	.diamondsvg,
+	.key {
+		scale: 0.95;
+	}
+
+	.text {
+		font-size: 1.6625rem;
+	}
+
+	.toptext {
+		font-size: 38px;
+	}
+
+	.overlay {
+		border-left: 27vw solid whitesmoke;
+	}
+
+	#prism {
+		scale: 0.95;
+		transform: translate(-63.45%, -50%);
+	}
+}
+
+/* Small */
+@media (max-width: 875px) {
+	.options-container {
+		margin-left: 7rem;
+		margin-top: 1rem;
+		gap: 0;
+	}
+
+	.diamondsvg,
+	.key {
+		scale: 0.85;
+	}
+
+	.text {
+		font-size: 1.4875rem;
+	}
+
+	.toptext {
+		font-size: 34px;
+	}
+
+	.overlay {
+		border-left: 28vw solid whitesmoke;
+	}
+
+	#prism {
+		scale: 0.85;
+		transform: translate(-71%, -58.5%);
+	}
+}
+
+
+/* Mobile */
+@media (max-width: 780px) {
+	#topSection{
+		height: 100vh;
+	}
+	.greenlay {
+		width: 100%;
+	
+	}
+
+	.options-container {
+		margin: 0;
+		width: 100%;
+		gap: 2rem;
+		justify-content: space-around;
+	}
+
+	.diamondsvg,
+	.key {
+		scale: 1;
+	}
+
+	.text {
+		font-size: 1.75rem;
+
+	}
+
+	.toptext {
+		font-size: 40px;
+	}
+
+	.overlay {
+		display: none;
+	}
+
+	.options {
+		animation-delay: 0.3s;
+	}
+
+	.options:first-of-type {
+		animation-delay: 0.1s;
+	}
+
+	#mobilePrismSection {
+		display: block;
+	}
+
+	#prism {
+		width: 495px;
+		transform: translate(1.5rem, -4rem);
+	}
+}
+
+/* Mobile small */
+@media (max-width:600px) {
+	.options-container {
+		gap: 0;
+	}
+
+	.diamondsvg,
+	.key {
+		scale: 0.9;
+	}
+
+	.text {
+		font-size: 1.575rem;
+	}
+
+	.toptext {
+		font-size: 36px;
+	}
+}
+
+/* Mobile Scalable */
+@media (max-width:500px) {
+	.key {
+		scale: none;
+		width: 20vw;
+		margin-right: 5px;
+	}
+
+	#key {
+		margin: auto;
+		width: 20vw;
+	}
+
+	.options-container {
+		flex-direction: column;
+	}
+
+	.options {
+		width: 75%;
+		background-color: whitesmoke;
+		padding: 1rem;
+		border-radius: 20px;
+	}
+
+	.diamondsvg {
+		display: none;
+	}
+
+	.prism-holder {
+		height: 100vw;
+	}
+
+	#prism {
+		width: 100vw;
+		transform: translate(5vw, -35vw);
+	}
+
+	.text {
+		font-size: 9vw;
+		flex: 4;
+	}
+
+	.toptext {
+		font-size: 11vw;
+	}
+
+
+}
+@media (max-width: 350px){
+	.options-container{
+		margin-top: 4rem;
+	}
+}
+
+@keyframes flashlight {
+	0% {
+		border-right: 100000rem solid whitesmoke;
+	}
+
+	50% {
+		border-right: 1000rem solid transparent;
+	}
+}
+
+
+@keyframes floatup {
+	0% {
+		opacity: 0;
+		margin-top: 7rem;
+	}
+
+	100% {
+		opacity: 1;
+		margin-top: 3rem;
+	}
+}
