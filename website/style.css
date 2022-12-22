@@ -7,7 +7,7 @@
 
 :root {
 	---headerGreen: #20a758;
-	---blueGreen: #009b72;
+	---blueGreen: #009970;
 	---top: #6ec592;
 	---middle: #58d68d;
 	---bottom: #4eb79b;
@@ -22,6 +22,13 @@
 	background: linear-gradient(to right, var(---blueGreen) 50%, var(---headerGreen));
 	background-attachment: fixed;
 }
+/* .ff{
+	background-image: url("https://t3.ftcdn.net/jpg/05/20/04/56/360_F_520045644_p0HXbREt9zSLQmthKezfgIZxvd0nfQ7n.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-color: #04795a;
+	background-blend-mode: normal;
+} */
 
 .flex-parent {
 	display: flex;

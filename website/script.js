@@ -14,7 +14,6 @@ topSection.style.height = windowHeight + "px";
 
 // Mobile to PC switches
 window.onload = window.onresize = function () {
-
     const wrapping = $(".wrapping")
     const KeyTextContainerHTML = "<div class=\"keyTextContainer flex-parent\"></div>"
     if (window.innerWidth <= 500 && wrapping.parent().is($(".keyTextContainer"))) {
@@ -26,7 +25,5 @@ window.onload = window.onresize = function () {
         wrapping.slice(0, 2).wrapAll(KeyTextContainerHTML)
         wrapping.slice(2).wrapAll(KeyTextContainerHTML)
         $("[asymkey]").attr("src", "website/Pics/key2.svg")
-
     }
-
 }
